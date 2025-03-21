@@ -1,4 +1,4 @@
 config.json
-../commands/__pycache__/
-../cogs/__pycache__/
+../commands/__pycache__/*
+../cogs/__pycache__/*
 uv.lock
