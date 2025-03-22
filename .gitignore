@@ -1,4 +1,7 @@
 config.json
-../commands/__pycache__/*
-../cogs/__pycache__/*
 uv.lock
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class

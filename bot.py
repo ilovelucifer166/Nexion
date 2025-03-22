@@ -12,6 +12,7 @@ intents.messages = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
+
 bot.config = config  # Make config available to cogs
 
 # Load cogs
@@ -28,6 +29,12 @@ async def on_ready():
 async def on_message(message):
     if message.author == bot.user:
         return
+    
+    # Check if bot is mentioned
+    if bot.user.mentioned_in(message):
+        # Create a fake message with !chat command, ghetto way to make an alias for the chat command
+        message.content = '!chat ' + message.content
+    
     await bot.process_commands(message)
 
 if __name__ == "__main__":
